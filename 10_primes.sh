@@ -39,3 +39,5 @@ done
 }
 
 print_prime_numbers 60000 63000
+
+exit 0

@@ -51,3 +51,5 @@ else
     date
     echo $result
 fi
+
+exit 0
