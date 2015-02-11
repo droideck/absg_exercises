@@ -8,20 +8,20 @@ ERR_WRONG_ARGS=65
 
 gen_number()
 {
-local num_regexp='^[0-9]+$'
+    local num_regexp='^[0-9]+$'
 
-if ! [[ $1 =~ $num_regexp ]] || ! [[ $2 =~ $num_regexp ]]
-then
-    echo "Usage: $(basename $0) start_number end_number."
-    return $ERR_WRONG_ARGS
-fi
+    if ! [[ $1 =~ $num_regexp ]] || ! [[ $2 =~ $num_regexp ]]
+    then
+        echo "Usage: $(basename $0) start_number end_number."
+        return $ERR_WRONG_ARGS
+    fi
 
-return_num=0
+    return_num=0
 
-while (( $return_num < $1 ))
-do
-    return_num=$(( $RANDOM % $2 ))
-done
+    while (( $return_num < $1 ))
+    do
+        return_num=$(( $RANDOM % $2 ))
+    done
 }
 
 count=0

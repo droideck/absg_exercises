@@ -9,9 +9,9 @@
 
 uncompres()
 {
-echo $fileinfo | grep "gzip" > /dev/null && tar xvfz $1 &> /dev/null && uncompressed=true && return 0
-echo $fileinfo | grep "bzip2" > /dev/null && tar xvfj $1 &> /dev/null && uncompressed=true && return 0
-echo $fileinfo | grep "Zip" > /dev/null && unzip -o $1 &> /dev/null && uncompressed=true && return 0
+    echo $fileinfo | grep "gzip" > /dev/null && tar xvfz $1 &> /dev/null && uncompressed=true && return 0
+    echo $fileinfo | grep "bzip2" > /dev/null && tar xvfj $1 &> /dev/null && uncompressed=true && return 0
+    echo $fileinfo | grep "Zip" > /dev/null && unzip -o $1 &> /dev/null && uncompressed=true && return 0
 }
 
 

@@ -8,41 +8,41 @@
 # Use function from exercise 12
 is_int_or_str()
 {
-TRUE=0
-FALSE=1
-expr $1 + 0 &> /dev/null
-if (( $? == 0 ))
-then
-    return $TRUE
-else
-    return $FALSE
-fi
+    TRUE=0
+    FALSE=1
+    expr $1 + 0 &> /dev/null
+    if (( $? == 0 ))
+    then
+        return $TRUE
+    else
+        return $FALSE
+    fi
 }
 
 
 atoi()
 {
-return_num=$(expr match "$1" '\(^[0-9]\+\)')
-if [[ -z $return_num ]]
-then
-    return_num=0
-else
-    # Removing leading zeros
-    return_num=$(expr $return_num + 0)
-fi
+    return_num=$(expr match "$1" '\(^[0-9]\+\)')
+    if [[ -z $return_num ]]
+    then
+        return_num=0
+    else
+        # Removing leading zeros
+        return_num=$(expr $return_num + 0)
+    fi
 }
 
 
 itoa()
 {
-err_wrong_args=65
+    err_wrong_args=65
 
-is_int_or_str $1 || return $err_wrong_args
-num=$1
-base=${2:-10}
-is_int_or_str $2 || return $err_wrong_args
+    is_int_or_str $1 || return $err_wrong_args
+    num=$1
+    base=${2:-10}
+    is_int_or_str $2 || return $err_wrong_args
 
-return_ascii=$(echo "obase=$base; $num" | bc)
+    return_ascii=$(echo "obase=$base; $num" | bc)
 }
 
 #                           main

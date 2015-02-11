@@ -4,15 +4,15 @@
 
 is_int_or_str()
 {
-TRUE=0
-FALSE=1
-expr $1 + 0 &> /dev/null
-if (( $? == 0 ))
-then
-    return $TRUE
-else
-    return $FALSE
-fi
+    TRUE=0
+    FALSE=1
+    expr $1 + 0 &> /dev/null
+    if (( $? == 0 ))
+    then
+        return $TRUE
+    else
+        return $FALSE
+    fi
 }
 
 is_int_or_str 2
