@@ -41,6 +41,7 @@ draw_word()
     for i in $(seq 1 8)
     do
         count=0
+        # \U for upper AND \n for new line
         for char in $(echo "$1" | sed -e "s/\(.\)/\U\1\n/g")
         do
             let count++

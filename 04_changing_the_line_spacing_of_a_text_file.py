@@ -18,14 +18,14 @@ if len(sys.argv) == 1 or not os.path.isfile(sys.argv[1]):
     sys.exit(err_wrong_args)
 
 text_file = sys.argv[1]
-fl = open(text_file)
 
-for line in fl.readlines():
-    if len(line) > 1:
-        print line,
+with open(text_file) as fl:
+    for line in fl.readlines():
+        if len(line) > 1:
+            print line,
 # For now, script remove all blank lines from file.
 # For double-spacing: uncomment two lines below.
 # For triple-spacing: uncomment three lines below.
-#       print
-#       print
-#       print
+#           print
+#           print
+#           print
